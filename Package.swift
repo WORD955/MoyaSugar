@@ -4,9 +4,10 @@ import PackageDescription
 
 let package = Package(
   name: "MoyaSugar",
-  platforms: [
-    .macOS(.v10_12), .iOS(.v10), .tvOS(.v10), .watchOS(.v3)
-  ],
+  platforms: [.iOS("13.0"),
+              .macOS("10.15"),
+              .tvOS("13.0"),
+              .watchOS("6.0")],
   products: [
     .library(name: "MoyaSugar", targets: ["MoyaSugar"]),
   ],
