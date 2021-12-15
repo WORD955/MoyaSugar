@@ -2,52 +2,52 @@ import Foundation
 import Moya
 
 public enum MultiSugarTarget: SugarTargetType {
-  case target(SugarTargetType)
-
-  public init(_ target: SugarTargetType) {
-    self = .target(target)
-  }
-
-  public var target: SugarTargetType {
-    switch self {
-    case let .target(target):
-      return target
+    case target(SugarTargetType)
+    
+    public init(_ target: SugarTargetType) {
+        self = .target(target)
     }
-  }
-
-  public var baseURL: URL {
-    return self.target.baseURL
-  }
-
-  public var url: URL {
-    return self.target.url
-  }
-
-  public var defaultURL: URL {
-    return self.target.defaultURL
-  }
-
-  public var route: Route {
-    return self.target.route
-  }
-
-  public var parameters: Parameters? {
-    return self.target.parameters
-  }
-
-  public var headers: [String: String]? {
-    return self.target.headers
-  }
-
-  public var task: Task {
-    return self.target.task
-  }
-
-  public var validationType: ValidationType {
-    return self.target.validationType
-  }
-
-  public var sampleData: Data {
-    return self.target.sampleData
-  }
+    
+    public var target: SugarTargetType {
+        switch self {
+        case let .target(target):
+            return target
+        }
+    }
+    
+    public var baseURL: URL {
+        target.baseURL
+    }
+    
+    public var url: URL {
+        target.url
+    }
+    
+    public var defaultURL: URL {
+        target.defaultURL
+    }
+    
+    public var route: Route {
+        target.route
+    }
+    
+    public var parameters: Parameters? {
+        target.parameters
+    }
+    
+    public var headers: [String: String]? {
+        target.headers
+    }
+    
+    public var task: Task {
+        target.task
+    }
+    
+    public var validationType: ValidationType {
+        target.validationType
+    }
+    
+    public var sampleData: Data {
+        target.sampleData
+    }
 }
